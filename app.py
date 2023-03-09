@@ -22,7 +22,7 @@ class Application_ui(Frame):
 
     def __init__(self, master=None):
         Frame.__init__(self, master)
-        self.master.title('Excel转化Rpy工具')
+        self.master.title('Excel转化Rpy工具mk4')
         self.master.geometry('600x343')
         self.createWidgets()
 
@@ -131,13 +131,20 @@ class Application(Application_ui):
         self.comboEvent()
 
     def ConvertButton_Cmd(self, event=None):
+        # 这个就是UI界面那个转换按钮了
         success_flag = True
         for path in self.getTlist():
             try:
+
+                # 主要流程就是下面这些了，先Parser()后Converter()，随后generate_rpy_elements()
                 parser = Parser(path)
+                # - 调用parser.py里的Parser()函数
                 conveter = Converter(parser)
+                # - 调用converter.py里的Converter()函数
                 convert_results = conveter.generate_rpy_elements()
+                # - 调用converter.py里的generate_rpy_elements()函数（应该是对以上两个调用的记过进行处理）
                 print(conveter.side_characters)
+
                 for res in convert_results:
                     self.convert(self.saveAddr.get(), res, conveter.role_name_mapping, conveter.side_characters)
             except ConvertException as err:

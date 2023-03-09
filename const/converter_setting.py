@@ -4,19 +4,35 @@ from model.element import Text, Image, Transition, Audio
 ElementColNumMapping = {
     'role_name': 0,
     'text': 1,
-    'music': 18,
-    'character': 19,
-    'change_page': 20,
-    'background': 21,
-    'remark': 22,
-    'mode': 23,
-    'sound': 24,
-    'transition': 25,
-    'special': 26,
-    'voice': 27,
-    'menu': 28,
-    'side_character': 29,
+    'music': 2,
+
+    'fromto': 3,
+    'fadeinout': 4,
+
+    'character': 5,
+
+    'xforma':6,
+
+    'change_page': 7,
+    'background': 8,
+    'remark': 9,
+    'mode': 10,
+    'sound': 11,
+    'transition': 12,
+    'special': 13,
+    'voice': 14,
+    'menu': 15,
+    'side_character': 16,
+
+    'fixpronoun': 17,
+    'char_color': 18,
+    'char_whocolor': 19,
+    'char_whatcolor': 20,
+    'char_voicetag': 21,
+    'char_whatprefix': 22,
+    'char_whatsuffix': 23,
 }
+
 
 # 元素映射
 ElementMapping = {
@@ -65,6 +81,6 @@ ReplaceCharacterMapping = {
     "%": "\\%",  # % --> \%
     "\"": "\\\"",  # " -> \"
     "\'": "\\\'",  # ' -> \'
-    "{": "{{",  # { -> {{
-    "[": "[[",  # [ -> [[
+    #"{": "{{",  # { -> {{
+    #"[": "[[",  # [ -> [[
 }

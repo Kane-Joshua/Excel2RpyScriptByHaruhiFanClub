@@ -2,6 +2,7 @@
 """
     一些自定义的异常，方便排查问题
 """
+# from const.converter_setting import ElementColNumMapping
 
 
 class ParseFileException(Exception):
@@ -36,3 +37,5 @@ class SaveFileException(Exception):
     def __init__(self, msg):
         super(SaveFileException, self).__init__(msg)
         self.msg = msg
+
+
